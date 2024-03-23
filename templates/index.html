@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h1>Hello world</h1>
+    <p>This is my first webpage</p>
+    <p>My name is {{ firstname }}</p>
+    <p>{{ stuff|title }}</p>
+    <h5>Favourite Pizza Lists</h5>
+    {% for topping in fav_pizza %}
+    {% if topping == 'Mushrooms' %}
+    <p>{{ topping }} is my favourite of all!!!</p>
+    {% else %}
+    <ul>
+        <li>{{ topping }}</li>
+    </ul>
+    {% endif %}
+    {% endfor %}
+
+    <br>
+    <h5>Item in pizza list</h5>
+    {{ fav_pizza[0] }}
+    {{ fav_pizza[1] }}
+    {{ fav_pizza[2] }}
+    {{ fav_pizza[3] }}
+    {{ fav_pizza[4] }}
+
+
+</div>
+
+{% endblock %}
